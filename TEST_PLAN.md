@@ -165,7 +165,7 @@ Open **two PowerShell windows**:
 
 **Window 1 — PHP server:**
 ```powershell
-$env:Path += ";C:\wamp64\bin\php\php8.3.28"
+$env:Path += ";C:\wamp64\bin\php\php8.5.0"
 cd C:\projects\shopify-pickup
 php -S 0.0.0.0:8080
 ```
