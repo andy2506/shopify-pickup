@@ -2,9 +2,9 @@
 
 Processes Shopify `orders/create` webhooks, extracts pickup-point data from the Pickup Generator beta API, and enriches the order with:
 
-- ✅ Updated **shipping line title** (e.g. `Ackermans - EXPRESS - 1569`)
-- ✅ Two **metafields** (`delivery.method`, `delivery.branch_code`)
-- ✅ Three **tags** (`delivery:express`, `branch:1569`, `click-and-collect-express`)
+- Updated **shipping line title** (e.g. `Ackermans - EXPRESS - 1569`)
+- Two **metafields** (`delivery.method`, `delivery.branch_code`)
+- Three **tags** (`delivery:express`, `branch:1569`, `click-and-collect-express`)
 
 ---
 
@@ -97,7 +97,7 @@ webhook_handler.php
 Shopify does not allow direct mutation of `shippingLines.title` on a placed order.  
 The Order Editing API (`orderEditBegin` → `orderEditRemoveShippingLine` → `orderEditAddShippingLine` → `orderEditCommit`) is the only supported workflow.
 
-> ⚠️ The `shipping_lines.code` field (e.g. `"PickUp"`) is **read-only** and cannot be changed via any API. Our handler never attempts to modify it.
+> The `shipping_lines.code` field (e.g. `"PickUp"`) is **read-only** and cannot be changed via any API. Our handler never attempts to modify it.
 
 ---
 
